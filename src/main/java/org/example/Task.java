@@ -25,6 +25,10 @@ public class Task {
     @JoinColumn(name = "user_id")
     private User assignedTo;
 
+    public Task() {
+
+    }
+
     Task(String title, String description, LocalDate createdDate,
          LocalDate dualDate, StatusEnum status) {
         this.title = title;
