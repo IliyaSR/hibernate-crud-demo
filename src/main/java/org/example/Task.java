@@ -18,7 +18,8 @@ public class Task {
     private String title;
     private String description;
     private LocalDate createdDate;
-    private LocalDate dualDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private StatusEnum status;
 
     @ManyToOne
@@ -29,12 +30,13 @@ public class Task {
 
     }
 
-    Task(String title, String description, LocalDate createdDate,
-         LocalDate dualDate, StatusEnum status) {
+    Task(String title, String description, LocalDate createdDate, LocalDate startDate,
+         LocalDate endDate, StatusEnum status) {
         this.title = title;
         this.description = description;
         this.createdDate = createdDate;
-        this.dualDate = dualDate;
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.status = status;
     }
 }
