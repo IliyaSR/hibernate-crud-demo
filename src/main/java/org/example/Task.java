@@ -23,7 +23,7 @@ public class Task {
     private StatusEnum status;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private User assignedTo;
 
     public Task() {
@@ -31,12 +31,13 @@ public class Task {
     }
 
     Task(String title, String description, LocalDate createdDate, LocalDate startDate,
-         LocalDate endDate, StatusEnum status) {
+         LocalDate endDate, StatusEnum status, User user) {
         this.title = title;
         this.description = description;
         this.createdDate = createdDate;
         this.startDate = startDate;
         this.endDate = endDate;
         this.status = status;
+        this.assignedTo = user;
     }
 }
