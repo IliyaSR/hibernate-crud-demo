@@ -7,8 +7,8 @@
 
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <mapping class="org.example.User"/>
-        <mapping class="org.example.Task"/>
-        <mapping class="org.example.Comment"/>
+        <mapping class="org.example.model.User"/>
+        <mapping class="org.example.model.Task"/>
+        <mapping class="org.example.model.Comment"/>
     </session-factory>
 </hibernate-configuration>
