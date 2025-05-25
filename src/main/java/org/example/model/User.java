@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model;
 
 import jakarta.persistence.*;
 
@@ -19,5 +19,13 @@ public class User {
 
     public User() {
 
+    }
+
+    public void setUsername(String username){
+        this.username = username;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
     }
 }
