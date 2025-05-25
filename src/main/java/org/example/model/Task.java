@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model;
 
 import jakarta.persistence.*;
 
@@ -24,7 +24,7 @@ public class Task {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private User assignedTo;
+    private User user;
 
     public Task() {
 
@@ -38,6 +38,18 @@ public class Task {
         this.startDate = startDate;
         this.endDate = endDate;
         this.status = status;
-        this.assignedTo = user;
+        this.user = user;
+    }
+
+    public void setTitle(String title){
+        this.title = title;
+    }
+
+    public void setDescription(String description){
+        this.description = description;
+    }
+
+    public void setStatus(String status){
+        this.status = StatusEnum.valueOf(status);
     }
 }
