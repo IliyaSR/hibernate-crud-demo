@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model;
 
 import jakarta.persistence.*;
 
@@ -13,19 +13,25 @@ public class Comment {
     private LocalDateTime createdAt;
 
     @ManyToOne
-    @JoinColumn(name = "task_id")
+    @JoinColumn(name = "task_id", nullable = false)
     private Task task;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     public Comment() {
 
     }
 
-    Comment(String text, LocalDateTime createdAt) {
+    public Comment(String text, LocalDateTime createdAt, Task task, User user) {
         this.text = text;
         this.createdAt = createdAt;
+        this.task = task;
+        this.user = user;
+    }
+
+    public void setText(String text){
+        this.text = text;
     }
 }
